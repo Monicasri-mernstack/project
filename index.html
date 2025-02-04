@@ -292,73 +292,7 @@
       <a href="./index.html">www.learngo.com</a>
     </div>
   </div>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        let matches = [];  
-        let currentIndex = -1;
-
-        document.querySelector(".btn-primary").addEventListener("click", function (event) {
-            event.preventDefault();
-
-            let searchQuery = document.querySelector(".form-control").value.trim();
-            if (!searchQuery) {
-                alert("Please enter a search term.");
-                return;
-            }
-
-            if (matches.length === 0) {  
-                resetSearch();
-                matches = [];
-                currentIndex = -1;
-
-                let contentElements = document.body.querySelectorAll("h1, h2, h3, p, span, a, label, li, td, button");
-
-                contentElements.forEach(element => {
-                    let regex = new RegExp(`(${searchQuery})`, "gi");
-                    if (element.childNodes.length === 1 && element.firstChild.nodeType === 3) { 
-                        element.innerHTML = element.innerHTML.replace(regex, `<mark class="highlight">$1</mark>`);
-                    }
-                });
-
-                matches = document.querySelectorAll(".highlight");
-                if (matches.length === 0) {
-                    alert("No matching content found on this page.");
-                    return;
-                }
-                currentIndex = -1; 
-            }
-
-            moveToNextMatch();
-        });
-
-        function moveToNextMatch() {
-            if (matches.length === 0) return;
-
-            matches.forEach(el => el.style.backgroundColor = "yellow");
-
-            currentIndex = (currentIndex + 1) % matches.length;
-            matches[currentIndex].scrollIntoView({ behavior: "smooth", block: "center" });
-            matches[currentIndex].style.backgroundColor = "orange";
-        }
-
-        function resetSearch() {
-            document.querySelectorAll(".highlight").forEach(el => {
-                el.outerHTML = el.innerHTML;
-            });
-        }
-    });
-
-    const style = document.createElement("style");
-    style.innerHTML = `
-        mark.highlight {
-            background-color: yellow;
-            font-weight: bold;
-            padding: 2px;
-            border-radius: 3px;
-        }
-    `;
-    document.head.appendChild(style);
-</script>
+  
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
