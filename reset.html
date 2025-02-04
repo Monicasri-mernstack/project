@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Reset Password</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: url('https://media.istockphoto.com/id/1456504340/photo/reset-password-concept-lock-icon-security-code-showing-on-change-password-page-while-business.jpg?s=612x612&w=0&k=20&c=QhIX_1LCMABWL2xRzNjCfafxJ3-LN_V3w8eqokr3w9M=') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-image: linear-gradient(to right, #d3c2dd, #54305595);
+            border-radius: 8px solid rgba(255, 255, 255, .2);
+            box-shadow: 0 0 10px rgba(130, 180, 218, 0.1);
+
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #8cadd1;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: rgb(97, 97, 173);
+            border: 1px solid #8cadd1;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #aa70c5;
+        }
+
+        h2 {
+            text-align: center;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form>
+            <h2>Reset Your Password</h2>
+            <label for="new-password">Enter your new password:</label>
+            <input type="password" id="new-password" name="new-password" required>
+            <label for="confirm-password">Confirm your new password:</label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
+            <button type="submit"><a href="./login.html">Update Password</a></button>
+        </form>
+    </div>
+</body>
+
+</html>
